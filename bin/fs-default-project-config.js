@@ -7,7 +7,7 @@ var resourcesFolder = path.join(__dirname, '../resources');
 var targetFiles = fs.readdirSync(resourcesFolder);
 
 var npmDependencies = [
-    "grunt-eslint@^17.1.0",
+    "grunt-eslint@^18.0.0",
     "grunt-sass-lint@^0.1.0"
 ];
 
