@@ -3,14 +3,14 @@
     "plugins": [
         "react"
     ],
-    "ecmaVersion": 6,
-    "sourceType": "module",
-    "parser": "babel-eslint",
-    "ecmaFeatures": {
-        "impliedStrict": true,
-        "jsx": true,
-        "classes": true,
-        "experimentalObjectRestSpread": true
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "impliedStrict": true,
+            "jsx": true,
+            "classes": true
+        },
     },
     "env": {
         "browser": true,
