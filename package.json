@@ -1,0 +1,25 @@
+{
+  "name": "fs-default-project-config",
+  "version": "0.0.0",
+  "description": "Intended to be a globally installed package, which will update a given repo's linter/editor config amongst other things",
+  "bin": {
+    "fs-default-project-config": "bin/fs-default-project-config.js"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FoxSportsAustralia/fs-default-project-config.git"
+  },
+  "author": "FOXSPORTS Australia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FoxSportsAustralia/fs-default-project-config/issues"
+  },
+  "homepage": "https://github.com/FoxSportsAustralia/fs-default-project-config#readme",
+  "dependencies": {
+    "copy-files": "^0.1.0"
+  }
+}
