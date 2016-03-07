@@ -18,8 +18,5 @@
   "bugs": {
     "url": "https://github.com/FoxSportsAustralia/fs-default-project-config/issues"
   },
-  "homepage": "https://github.com/FoxSportsAustralia/fs-default-project-config#readme",
-  "dependencies": {
-    "copy-files": "^0.1.0"
-  }
+  "homepage": "https://github.com/FoxSportsAustralia/fs-default-project-config#readme"
 }
