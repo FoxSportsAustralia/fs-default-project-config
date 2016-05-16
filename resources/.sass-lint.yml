@@ -67,3 +67,4 @@ rules:
     - 1
     - allow-leading-underscore: true
       convention: '[a-z]+([-_].+)?'
+  zero-unit: 1
