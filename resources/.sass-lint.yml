@@ -11,21 +11,20 @@
 #
 # The following settings have been disabled to not create warnings for things we can't change
 # no-mergeable-selectors, no-qualifying-elements, placeholder-in-extend
-#
+
 files:
   include: '**/*.s+(a|c)ss'
-  ignore: []
 options:
   formatter: stylish
   merge-default-rules: false
 rules:
-  border-zero: 1
+  border-zero: 2
   class-name-format:
-    - 1
+    - 2
     - convention: hyphenatedbem
-  empty-line-between-blocks: 1
+  empty-line-between-blocks: 2
   function-name-format:
-    - 1
+    - 2
     - allow-leading-underscore: true
       convention: hyphenatedlowercase
   id-name-format:
@@ -35,11 +34,11 @@ rules:
     - 0
     - size: 4
   mixin-name-format:
-    - 1
+    - 2
     - allow-leading-underscore: true
       convention: hyphenatedlowercase
   nesting-depth:
-    - 1
+    - 2
     - max-depth: 4
   no-color-literals: 0
   no-css-comments: 0
@@ -50,21 +49,21 @@ rules:
   no-vendor-prefixes: 0
   placeholder-in-extend: 0
   placeholder-name-format:
-    - 1
+    - 2
     - allow-leading-underscore: true
       convention: '[a-z]+([-_].+)?'
   property-sort-order:
-    - 1
+    - 2
     - order: concentric
-  shorthand-values: 1
-  single-line-per-selector: 1
-  space-after-comma: 1
-  space-after-colon: 1
-  space-before-brace: 1
-  space-between-parens: 1
-  trailing-semicolon: 1
+  shorthand-values: 2
+  single-line-per-selector: 2
+  space-after-comma: 2
+  space-after-colon: 2
+  space-before-brace: 2
+  space-between-parens: 2
+  trailing-semicolon: 2
   variable-name-format:
-    - 1
+    - 2
     - allow-leading-underscore: true
       convention: '[a-z]+([-_].+)?'
-  zero-unit: 1
+  zero-unit: 2
