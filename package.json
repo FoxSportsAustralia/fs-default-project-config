@@ -1,10 +1,7 @@
 {
   "name": "fs-default-project-config",
-  "version": "0.0.0",
-  "description": "Intended to be a globally installed package, which will update a given repo's linter/editor config amongst other things",
-  "bin": {
-    "fs-default-project-config": "bin/fs-default-project-config.js"
-  },
+  "version": "1.0.0",
+  "description": "Repo containing commons fox sports project configs",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"

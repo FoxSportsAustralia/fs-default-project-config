@@ -1,0 +1,7 @@
+# Version 1.0.0
+/node_modules/
+/dist/
+/reports/
+/tmp/
+npm-debug.log
+exposed-version.txt
