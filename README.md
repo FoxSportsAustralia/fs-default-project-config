@@ -27,6 +27,15 @@ Repo containing commons fox sports project configs
     };
     ```
 
+### sass-lint
+1. Install as a dev dependency in your repo.
+2. Set up your `.sass-lint.yml` file to extend `./node_modules/fs-default-project-config/resources/.sass-lint.yml`
+
+    ```
+    options:
+        config-file: ./node_modules/fs-default-project-config/resources/.sass-lint.yml
+    ```
+
 ### All Others
 1. Copy desired contents from `./node_modules/fs-default-project-config/resources/`
 
