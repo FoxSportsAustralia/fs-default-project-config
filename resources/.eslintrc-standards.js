@@ -1,7 +1,4 @@
 module.exports = {
-    "extends": [
-        "./.eslintrc-base.js"
-    ],
     "rules": {
         /**
          * POSSIBLE ERRORS
@@ -93,7 +90,52 @@ module.exports = {
         "no-param-reassign": "error",                            // disallow reassigning function parameters
         "no-proto": "error",                                     // disallow the use of the __proto__ property
         "no-redeclare": "error",                                 // disallow variable redeclaration
-        "no-restricted-properties": "off",                       // disallow certain properties on certain objects
+        "no-restricted-properties": ["error", {                  // disallow certain properties on certain objects
+            "object": "describe",
+            "property": "only"
+        }, {
+            "object": "context",
+            "property": "only"
+        }, {
+            "object": "it",
+            "property": "only"
+        }, {
+            "object": "Array",                                   // es6 function, not ie10 compatible
+            "property": "from"
+        }, {
+            "object": "Array",                                   // es6 function, not ie10 compatible
+            "property": "of"
+        }, {
+            "object": "Array",                                   // es6 function, not ie10 compatible
+            "property": "entries"
+        }, {
+            "object": "Array",                                   // es6 function, not ie10 compatible
+            "property": "keys"
+        }, {
+            "object": "Array",                                   // es6 function, not ie10 compatible
+            "property": "values"
+        }, {
+            "object": "Array",                                   // es6 function, not ie10 compatible
+            "property": "find"
+        }, {
+            "object": "Array",                                   // es6 function, not ie10 compatible
+            "property": "findIndex"
+        }, {
+            "object": "Array",                                   // es6 function, not ie10 compatible
+            "property": "copyWithin"
+        }, {
+            "object": "Array",                                   // es6 function, not ie10 compatible
+            "property": "fill"
+        }, {
+            "object": "String",                                  // es6 function, not ie10 compatible
+            "property": "startsWith"
+        }, {
+            "object": "String",                                  // es6 function, not ie10 compatible
+            "property": "endsWith"
+        }, {
+            "object": "String",                                  // es6 function, not ie10 compatible
+            "property": "includes"
+        }],
         "no-return-assign": "error",                             // disallow assignment operators in return statements
         "no-return-await": "off",                                // disallow unnecessary return await
         "no-script-url": "off",                                  // disallow javascript: urls

@@ -1,7 +1,15 @@
 module.exports = {
-    "extends": [
-        "./.eslintrc-base.js"
-    ],
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module",
+        "ecmaFeatures": {
+            "impliedStrict": true,
+            "classes": true
+        }
+    },
+    "env": {
+        "es6": true
+    },
     "rules": {
         /**
          * POSSIBLE ERRORS
