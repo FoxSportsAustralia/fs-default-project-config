@@ -1,17 +1,3 @@
-# Version 1.0.0
-#
-# The following scss-lint Linters are not yet supported by sass-lint:
-# SelectorDepth
-#
-# The following settings/values are unsupported by sass-lint:
-# Linter Comment, option "allowed" '(Dependencies|@TODO)'
-#
-# The following settings have been disabled until sass-lint reaches parity with scss-lint:
-# indentation
-#
-# The following settings have been disabled to not create warnings for things we can't change
-# no-mergeable-selectors, no-qualifying-elements, placeholder-in-extend
-#
 files:
   include: '**/*.s+(a|c)ss'
   ignore: []
@@ -19,51 +5,107 @@ options:
   formatter: stylish
   merge-default-rules: false
 rules:
+  attribute-quotes:
+    - 2
+    - include: true
   border-zero: 2
   class-name-format:
     - 2
     - convention: hyphenatedbem
+  clean-import-paths: 2
+  declarations-before-nesting: 2
+  empty-args: 2
   empty-line-between-blocks: 2
+  extends-before-declarations: 2
+  extends-before-mixins: 2
+  final-newline: 2
+  force-attribute-nesting: 0
+  force-element-nesting: 0
+  force-pseudo-nesting: 0
   function-name-format:
     - 2
     - allow-leading-underscore: true
-      convention: hyphenatedlowercase
+      convention: hyphenatedbem
+  hex-length: 2
+  hex-notation: 2
   id-name-format:
-    - 0
+    - 2
     - convention: hyphenatedbem
   indentation:
-    - 0
+    - 2
     - size: 4
+  leading-zero: 2
+  max-file-line-count: 0
+  max-line-length: 0 # unforuntately no way to ignore comments :(
   mixin-name-format:
     - 2
     - allow-leading-underscore: true
-      convention: hyphenatedlowercase
+      convention: hyphenatedbem
+  mixins-before-declarations: 2
   nesting-depth:
     - 2
     - max-depth: 4
+  no-attribute-selectors: 0
+  no-color-hex: 0
+  no-color-keywords: 2
   no-color-literals: 0
+  no-combinators: 0
   no-css-comments: 0
-  no-important: 0
+  no-debug: 0
+  no-disallowed-properties: 0
+  no-duplicate-properties: 2
+  no-empty-rulesets: 2
+  no-extends: 0
+  no-ids: 0
+  no-important: 2
+  no-invalid-hex: 2
   no-mergeable-selectors: 0
+  no-misspelled-properties: 2
+  no-qualifying-elements:
+    - 2
+    - allow-element-with-attribute: true
+      allow-element-with-class: true
+      allow-element-with-id: true
+  no-trailing-whitespace: 2
+  no-trailing-zero: 2
+  no-transition-all: 2
+  no-universal-selectors: 2
+  no-url-domains: 0
   no-url-protocols: 0
-  no-qualifying-elements: 0
-  no-vendor-prefixes: 0
+  no-vendor-prefixes:
+    - 2
+    - ignore-non-standard: true
+  no-warn: 2
+  one-declaration-per-line: 2
   placeholder-in-extend: 0
   placeholder-name-format:
     - 2
     - allow-leading-underscore: true
-      convention: '[a-z]+([-_].+)?'
+      convention: hyphenatedbem
   property-sort-order:
     - 2
     - order: concentric
+  property-units:
+    - 2
+    - global: ['px']
+  pseudo-element: 2
+  quotes: 2
   shorthand-values: 2
   single-line-per-selector: 2
-  space-after-comma: 2
+  space-after-bang: 2
   space-after-colon: 2
+  space-after-comma: 2
+  space-around-operator: 0 # unfortunately, this doesn't work as expected with the slash in 'font'
+  space-before-bang: 2
   space-before-brace: 2
   space-between-parens: 2
   trailing-semicolon: 2
+  url-quotes: 2
+  variable-for-property:
+    - 2
+    - properties: ['font-size', 'line-height']
   variable-name-format:
     - 2
     - allow-leading-underscore: true
-      convention: '[a-z]+([-_].+)?'
+      convention: hyphenatedbem
+  zero-unit: 2
