@@ -1,17 +1,8 @@
 module.exports = {
-    "parserOptions": {
-        "ecmaVersion": 6,
-        "sourceType": "module",
-        "ecmaFeatures": {
-            "impliedStrict": true,
-            "classes": true
-        }
-    },
     "env": {
         "browser": true,
         "mocha": true,
-        "node": true,
-        "es6": true
+        "node": true
     },
     "globals": {
         "after": true,
