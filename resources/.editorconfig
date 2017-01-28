@@ -11,6 +11,9 @@ insert_final_newline = true
 [*.html]
 indent_size = 4
 
+[*.html.twig]
+indent_size = 4
+
 [*.json]
 indent_style = tab
 indent_size = 4

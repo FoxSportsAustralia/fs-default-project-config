@@ -76,10 +76,7 @@ module.exports = {
         "no-labels": "error",                                    // disallow labeled statements
         "no-lone-blocks": "error",                               // disallow unnecessary nested blocks
         "no-loop-func": "off",                                   // disallow function declarations and expressions inside loop statements
-        "no-magic-numbers": ["error", {                          // disallow magic numbers
-            "ignore": [0, 1, -1],
-            "ignoreArrayIndexes": true
-        }],
+        "no-magic-numbers": "off",                               // disallow magic numbers (No we won't do that, that's cruel and unserving to anyone but Sean. Cause he's mean. A MONSTER)
         "no-multi-spaces": "off",                                // disallow multiple spaces
         "no-multi-str": "error",                                 // disallow multiline strings
         "no-new-func": "error",                                  // disallow new operators with the Function object
@@ -285,9 +282,9 @@ module.exports = {
         "wrap-regex": "off",                                                                      //  require parenthesis around regex literals
 
         /**
-         * ECMASCRIPT 6
+         * ECMASCRIPT 2015
          *
-         * These rules relate to ES6, also known as ES2015
+         * These rules relate to ES2015, also known as ES6
          */
         "arrow-body-style": "off",                    //  require braces around arrow function bodies
         "arrow-parens": "error",                      //  require parentheses around arrow function arguments
