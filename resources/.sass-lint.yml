@@ -87,7 +87,7 @@ rules:
     - order: concentric
   property-units:
     - 2
-    - global: ['px']
+    - global: ['px', 's'] # 'px' for all text, 's' for all durations
   pseudo-element: 2
   quotes: 2
   shorthand-values: 2
