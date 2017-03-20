@@ -1,6 +1,6 @@
 {
   "name": "fs-default-project-config",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "Repo containing commons fox sports project configs",
   "main": "index.js",
   "scripts": {
