@@ -73,6 +73,7 @@ module.exports = {
         "react/jsx-uses-react": "error",                                              // Prevent React to be incorrectly marked as unused
         "react/jsx-uses-vars": "error",                                               // Prevent variables used in JSX to be incorrectly marked as unused
         "react/jsx-wrap-multilines": "error",                                         // Prevent missing parentheses around multilines JSX (fixable)
+        "react/jsx-no-target-blank": "error",                                         // Prevent usage of unsafe target='_blank'
 
         /**
          * JSX a11y
