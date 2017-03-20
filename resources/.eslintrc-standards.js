@@ -241,7 +241,7 @@ module.exports = {
         "no-lonely-if": "error",                                                                  //  disallow if statements as the only statement in else blocks
         "no-mixed-operators": "error",                                                            //  disallow mixed binary operators
         "no-mixed-spaces-and-tabs": "error",                                                      //  disallow mixed spaces and tabs for indentation
-        "no-multiple-empty-lines": "error",                                                       //  disallow multiple empty lines
+        "no-multiple-empty-lines": ["error", {"max": 1}],                                         //  disallow multiple empty lines
         "no-negated-condition": "error",                                                          //  disallow negated conditions
         "no-nested-ternary": "error",                                                             //  disallow nested ternary expressions
         "no-new-object": "off",                                                                   //  disallow Object constructors
