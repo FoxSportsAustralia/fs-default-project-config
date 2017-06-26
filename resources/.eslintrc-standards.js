@@ -5,6 +5,9 @@ module.exports = {
          *
          * These rules relate to possible syntax or logic errors in JavaScript code:
          */
+        "for-direction": "off",                                                  // enforce “for” loop update clause moving the counter in the right direction
+        "no-await-in-loop": "off",                                               // disallow await inside of loops
+        "no-compare-neg-zero": "error",                                          // disallow comparing against -0
         "no-cond-assign": "error",                                               // disallow assignment operators in conditional expressions
         "no-console": ["error", { allow: ["warn", "error"] }],                   // disallow the use of console
         "no-constant-condition": "error",                                        // disallow constant expressions in conditions
@@ -13,8 +16,8 @@ module.exports = {
         "no-dupe-args": "error",                                                 // disallow duplicate arguments in function definitions
         "no-dupe-keys": "error",                                                 // disallow duplicate keys in object literals
         "no-duplicate-case": "error",                                            // disallow duplicate case labels
-        "no-empty-character-class": "off",                                       // disallow empty character classes in regular expressions
         "no-empty": "error",                                                     // disallow empty block statements
+        "no-empty-character-class": "off",                                       // disallow empty character classes in regular expressions
         "no-ex-assign": "off",                                                   // disallow reassigning exceptions in catch clauses
         "no-extra-boolean-cast": "error",                                        // disallow unnecessary boolean casts
         "no-extra-parens": "off",                                                // disallow unnecessary parentheses
@@ -79,60 +82,15 @@ module.exports = {
         "no-magic-numbers": "off",                               // disallow magic numbers (No we won't do that, that's cruel and unserving to anyone but Sean. Cause he's mean. A MONSTER)
         "no-multi-spaces": "off",                                // disallow multiple spaces
         "no-multi-str": "error",                                 // disallow multiline strings
+        "no-new": "off",                                         // disallow new For Side Effects
         "no-new-func": "error",                                  // disallow new operators with the Function object
         "no-new-wrappers": "off",                                // disallow new operators with the String, Number, and Boolean objects
-        "no-new": "off",                                         // disallow new operators outside of assignments or comparisons
-        "no-octal-escape": "off",                                // disallow octal escape sequences in string literals
         "no-octal": "error",                                     // disallow octal literals
+        "no-octal-escape": "off",                                // disallow octal escape sequences in string literals
         "no-param-reassign": "error",                            // disallow reassigning function parameters
         "no-proto": "error",                                     // disallow the use of the __proto__ property
         "no-redeclare": "error",                                 // disallow variable redeclaration
-        "no-restricted-properties": ["error", {                  // disallow certain properties on certain objects
-            "object": "describe",
-            "property": "only"
-        }, {
-            "object": "context",
-            "property": "only"
-        }, {
-            "object": "it",
-            "property": "only"
-        }, {
-            "object": "Array",                                   // es6 function, not ie10 compatible
-            "property": "from"
-        }, {
-            "object": "Array",                                   // es6 function, not ie10 compatible
-            "property": "of"
-        }, {
-            "object": "Array",                                   // es6 function, not ie10 compatible
-            "property": "entries"
-        }, {
-            "object": "Array",                                   // es6 function, not ie10 compatible
-            "property": "keys"
-        }, {
-            "object": "Array",                                   // es6 function, not ie10 compatible
-            "property": "values"
-        }, {
-            "object": "Array",                                   // es6 function, not ie10 compatible
-            "property": "find"
-        }, {
-            "object": "Array",                                   // es6 function, not ie10 compatible
-            "property": "findIndex"
-        }, {
-            "object": "Array",                                   // es6 function, not ie10 compatible
-            "property": "copyWithin"
-        }, {
-            "object": "Array",                                   // es6 function, not ie10 compatible
-            "property": "fill"
-        }, {
-            "object": "String",                                  // es6 function, not ie10 compatible
-            "property": "startsWith"
-        }, {
-            "object": "String",                                  // es6 function, not ie10 compatible
-            "property": "endsWith"
-        }, {
-            "object": "String",                                  // es6 function, not ie10 compatible
-            "property": "includes"
-        }],
+        "no-restricted-properties": "off",                       // disallow certain properties on certain objects
         "no-return-assign": "error",                             // disallow assignment operators in return statements
         "no-return-await": "off",                                // disallow unnecessary return await
         "no-script-url": "off",                                  // disallow javascript: urls
@@ -150,7 +108,9 @@ module.exports = {
         "no-void": "off",                                        // disallow void operators
         "no-warning-comments": "off",                            // disallow specified warning terms in comments
         "no-with": "error",                                      // disallow with statements
+        "prefer-promise-reject-errors": "off",                   // require using Error objects as Promise rejection reasons
         "radix": "off",                                          // enforce the consistent use of the radix argument when using parseInt()
+        "require-await": "off",                                  // disallow async functions which have no await expression
         "vars-on-top": "error",                                  // require var declarations be placed at the top of their containing scope
         "wrap-iife": "off",                                      // require parentheses around immediate function invocations
         "yoda": "error",                                         // require or disallow “Yoda” conditions
@@ -172,10 +132,10 @@ module.exports = {
         "no-delete-var": "error",                                // disallow deleting variables
         "no-label-var": "off",                                   // disallow labels that share a name with a variable
         "no-restricted-globals": "off",                          // disallow specified global variables
-        "no-shadow-restricted-names": "error",                   // disallow identifiers from shadowing restricted names
         "no-shadow": "off",                                      // disallow variable declarations from shadowing variables declared in the outer scope
-        "no-undef-init": "error",                                // disallow initializing variables to undefined
+        "no-shadow-restricted-names": "error",                   // disallow identifiers from shadowing restricted names
         "no-undef": "error",                                     // disallow the use of undeclared variables unless mentioned in /*global */ comments
+        "no-undef-init": "error",                                // disallow initializing variables to undefined
         "no-undefined": "off",                                   // disallow the use of undefined as an identifier
         "no-unused-vars": "error",                               // disallow unused variables
         "no-use-before-define": ["error", {"functions": false}], // disallow the use of variables before they are defined
@@ -185,54 +145,59 @@ module.exports = {
          *
          * These rules relate to style guidelines, and are therefore quite subjective
          */
-        "array-bracket-spacing": "error",                                                         //  enforce consistent spacing inside array brackets
-        "block-spacing": "error",                                                                 //  enforce consistent spacing inside single-line blocks
-        "brace-style": ["error", "1tbs", {"allowSingleLine": true}],                              //  enforce consistent brace style for blocks
-        "camelcase": ["error", {properties: "never"}],                                            //  enforce camelcase naming convention
-        "comma-dangle": "error",                                                                  //  require or disallow trailing commas
-        "comma-spacing": "error",                                                                 //  enforce consistent spacing before and after commas
-        "comma-style": "error",                                                                   //  enforce consistent comma style
-        "computed-property-spacing": "error",                                                     //  enforce consistent spacing inside computed property brackets
-        "consistent-this": ["error", "self"],                                                     //  enforce consistent naming when capturing the current execution context
-        "eol-last": "error",                                                                      //  require or disallow newline at the end of files
-        "func-call-spacing": "error",                                                             //  require or disallow spacing between function identifiers and their invocations
-        "func-name-matching": "off",                                                              //  require function names to match the name of the variable or property to which they are assigned
-        "func-names": "off",                                                                      //  require or disallow named function expressions
-        "func-style": "off",                                                                      //  enforce the consistent use of either function declarations or expressions
-        "id-blacklist": "off",                                                                    //  disallow specified identifiers
-        "id-length": "off",                                                                       //  enforce minimum and maximum identifier lengths
-        "id-match": "off",                                                                        //  require identifiers to match a specified regular expression
-        "indent": ["error", 4, {"SwitchCase": 1}],                                                //  enforce consistent indentation
-        "jsx-quotes": "error",                                                                    //  enforce the consistent use of either double or single quotes in JSX attributes
-        "key-spacing": ["error", {                                                                //  enforce consistent spacing between keys and values in object literal properties
-                "singleLine": {
-                    "afterColon": true,
-                    "beforeColon": false,
-                    "mode": "strict"
-                },
-                "multiLine": {
-                    "afterColon": true,
-                    "beforeColon": false,
-                    "mode": "minimum",
-                }
+        "array-bracket-newline": "off",                                                           // enforce line breaks after opening and before closing array brackets
+        "array-bracket-spacing": "error",                                                         // enforce consistent spacing inside array brackets
+        "array-element-newline": "off",                                                           // enforce line breaks between array elements
+        "block-spacing": "error",                                                                 // enforce consistent spacing inside single-line blocks
+        "brace-style": ["error", "1tbs", {"allowSingleLine": true}],                              // enforce consistent brace style for blocks
+        "camelcase": ["error", {properties: "never"}],                                            // enforce camelcase naming convention
+        "capitalized-comments": "off",                                                            // enforce or disallow capitalization of the first letter of a comment
+        "comma-dangle": "error",                                                                  // require or disallow trailing commas
+        "comma-spacing": "error",                                                                 // enforce consistent spacing before and after commas
+        "comma-style": "error",                                                                   // enforce consistent comma style
+        "computed-property-spacing": "error",                                                     // enforce consistent spacing inside computed property brackets
+        "consistent-this": ["error", "self"],                                                     // enforce consistent naming when capturing the current execution context
+        "eol-last": "error",                                                                      // require or disallow newline at the end of files
+        "func-call-spacing": "error",                                                             // require or disallow spacing between function identifiers and their invocations
+        "func-name-matching": "off",                                                              // require function names to match the name of the variable or property to which they are assigned
+        "func-names": "off",                                                                      // require or disallow named function expressions
+        "func-style": "off",                                                                      // enforce the consistent use of either function declarations or expressions
+        "id-blacklist": "off",                                                                    // disallow specified identifiers
+        "id-length": "off",                                                                       // enforce minimum and maximum identifier lengths
+        "id-match": "off",                                                                        // require identifiers to match a specified regular expression
+        "indent": ["error", 4, {"SwitchCase": 1}],                                                // enforce consistent indentation
+        "jsx-quotes": "error",                                                                    // enforce the consistent use of either double or single quotes in JSX attributes
+        "key-spacing": ["error", {                                                                // enforce consistent spacing between keys and values in object literal properties
+            "singleLine": {
+                "afterColon": true,
+                "beforeColon": false,
+                "mode": "strict"
+            },
+            "multiLine": {
+                "afterColon": true,
+                "beforeColon": false,
+                "mode": "minimum"
+            }
         }],
         "keyword-spacing": "error",                                                               //  enforce consistent spacing before and after keywords
         "line-comment-position": "off",                                                           //  enforce position of line comments
         "linebreak-style": ["error", "unix"],                                                     //  enforce consistent linebreak style
         "lines-around-comment": ["error", {"beforeBlockComment": true, "allowBlockStart": true}], //  require empty lines around comments
-        "lines-around-directive": "off",                                                          //  require or disallow newlines around directives
         "max-depth": ["error", 3],                                                                //  enforce a maximum depth that blocks can be nested
-        "max-len": ["error", {"code": 140, "ignoreComments": true}],                              //  enforce a maximum line length
+        "max-len": ["error", {                                                                    //  enforce a maximum line length
+            "code": 140,
+            "ignoreComments": true,
+            "ignoreUrls": true,
+            "ignoreTemplateLiterals": true
+        }],
         "max-lines": "off",                                                                       //  enforce a maximum number of lines per file
         "max-nested-callbacks": ["error", 3],                                                     //  enforce a maximum depth that callbacks can be nested
         "max-params": ["error", 5],                                                               //  enforce a maximum number of parameters in function definitions
-        "max-statements-per-line": ["error", {"max": 1}],                                         //  enforce a maximum number of statements allowed per line
         "max-statements": "off",                                                                  //  enforce a maximum number of statements allowed in function blocks
+        "max-statements-per-line": ["error", {"max": 1}],                                         //  enforce a maximum number of statements allowed per line
         "multiline-ternary": ["error", "never"],                                                  //  enforce newlines between operands of ternary expressions
         "new-cap": "off",                                                                         //  require constructor names to begin with a capital letter
         "new-parens": "error",                                                                    //  require parentheses when invoking a constructor with no arguments
-        "newline-after-var": ["error", "always"],                                                 //  require or disallow an empty line after variable declarations
-        "newline-before-return": "error",                                                         //  require an empty line before return statements
         "newline-per-chained-call": ["error", {"ignoreChainWithDepth": 2}],                       //  require a newline after each call in a method chain
         "no-array-constructor": "error",                                                          //  disallow Array constructors
         "no-bitwise": "error",                                                                    //  disallow bitwise operators
@@ -241,6 +206,7 @@ module.exports = {
         "no-lonely-if": "error",                                                                  //  disallow if statements as the only statement in else blocks
         "no-mixed-operators": "error",                                                            //  disallow mixed binary operators
         "no-mixed-spaces-and-tabs": "error",                                                      //  disallow mixed spaces and tabs for indentation
+        "no-multi-assign": "off",                                                                 //  disallow Use of Chained Assignment Expressions
         "no-multiple-empty-lines": ["error", {"max": 1}],                                         //  disallow multiple empty lines
         "no-negated-condition": "error",                                                          //  disallow negated conditions
         "no-nested-ternary": "error",                                                             //  disallow nested ternary expressions
@@ -253,19 +219,29 @@ module.exports = {
         "no-underscore-dangle": "off",                                                            //  disallow dangling underscores in identifiers
         "no-unneeded-ternary": "error",                                                           //  disallow ternary operators when simpler alternatives exist
         "no-whitespace-before-property": "error",                                                 //  disallow whitespace before properties
+        "nonblock-statement-body-position": "off",                                                //  nonblock-statement-body-position
         "object-curly-newline": "off",                                                            //  enforce consistent line breaks inside braces
         "object-curly-spacing": "error",                                                          //  enforce consistent spacing inside braces
         "object-property-newline": "off",                                                         //  enforce placing object properties on separate lines
-        "one-var-declaration-per-line": "off",                                                    //  require or disallow newlines around variable declarations
         "one-var": "off",                                                                         //  enforce variables to be declared either together or separately in functions
+        "one-var-declaration-per-line": "off",                                                    //  require or disallow newlines around variable declarations
         "operator-assignment": "off",                                                             //  require or disallow assignment operator shorthand where possible
         "operator-linebreak": ["error", "after"],                                                 //  enforce consistent linebreak style for operators
         "padded-blocks": ["error", "never"],                                                      //  require or disallow padding within blocks
+        "padding-line-between-statements": ["error",                                              //  require or disallow padding lines between statements
+            { blankLine: "always", prev: "*", next: "return" },
+            { blankLine: "any", prev: "directive", next: "directive" },
+            { blankLine: "always", prev: ["const", "let", "var"], next: "*"},
+            { blankLine: "any", prev: ["const", "let", "var"], next: ["const", "let", "var"]},
+            { blankLine: "always", prev: ["import"], next: "*"},
+            { blankLine: "any", prev: ["import"], next: ["import"]}
+        ],
         "quote-props": ["error", "consistent-as-needed"],                                         //  require quotes around object literal property names
         "quotes": ["error", "single"],                                                            //  enforce the consistent use of either backticks, double, or single quotes
         "require-jsdoc": "off",                                                                   //  require JSDoc comments
-        "semi-spacing": "error",                                                                  //  enforce consistent spacing before and after semicolons
         "semi": "error",                                                                          //  require or disallow semicolons instead of ASI
+        "semi-spacing": "error",                                                                  //  enforce consistent spacing before and after semicolons
+        "semi-style": "error",                                                                    //  enforce location of semicolons
         "sort-keys": "off",                                                                       //  require object keys to be sorted
         "sort-vars": "off",                                                                       //  require variables within the same declaration block to be sorted
         "space-before-blocks": "error",                                                           //  enforce consistent spacing before blocks
@@ -278,43 +254,9 @@ module.exports = {
         "space-infix-ops": "error",                                                               //  require spacing around infix operators
         "space-unary-ops": "error",                                                               //  enforce consistent spacing before or after unary operators
         "spaced-comment": "error",                                                                //  enforce consistent spacing after the SLASHSLASH or /* in a comment
-        "unicode-bom": "error",                                                                   //  require or disallow Unicode byte order mark (BOM)
-        "wrap-regex": "off",                                                                      //  require parenthesis around regex literals
-
-        /**
-         * ECMASCRIPT 2015
-         *
-         * These rules relate to ES2015, also known as ES6
-         */
-        "arrow-body-style": "off",                    //  require braces around arrow function bodies
-        "arrow-parens": "error",                      //  require parentheses around arrow function arguments
-        "arrow-spacing": "error",                     //  enforce consistent spacing before and after the arrow in arrow functions
-        "constructor-super": "error",                 //  require super() calls in constructors
-        "generator-star-spacing": "error",            //  enforce consistent spacing around * operators in generator functions
-        "no-class-assign": "off",                     //  disallow reassigning class members
-        "no-confusing-arrow": "off",                  //  disallow arrow functions where they could be confused with comparisons
-        "no-const-assign": "error",                   //  disallow reassigning const variables
-        "no-dupe-class-members": "error",             //  disallow duplicate class members
-        "no-duplicate-imports": "error",              //  disallow duplicate module imports
-        "no-new-symbol": "error",                     //  disallow new operators with the Symbol object
-        "no-restricted-imports": ["error", "lodash"], //  disallow specified modules when loaded by import
-        "no-this-before-super": "error",              //  disallow this/super before calling super() in constructors
-        "no-useless-computed-key": "error",           //  disallow unnecessary computed property keys in object literals
-        "no-useless-constructor": "error",            //  disallow unnecessary constructors
-        "no-useless-rename": "error",                 //  disallow renaming import, export, and destructured assignments to the same name
-        "no-var": "error",                            //  require let or const instead of var
-        "object-shorthand": "error",                  //  require or disallow method and property shorthand syntax for object literals
-        "prefer-arrow-callback": "off",               //  require arrow functions as callbacks
-        "prefer-const": "off",                        //  require const declarations for variables that are never reassigned after declared
-        "prefer-numeric-literals": "off",             //  disallow parseInt() in favor of binary, octal, and hexadecimal literals
-        "prefer-rest-params": "off",                  //  require rest parameters instead of arguments
-        "prefer-spread": "error",                     //  require spread operators instead of .apply()
-        "prefer-template": "off",                     //  require template literals instead of string concatenation
-        "require-yield": "off",                       //  require generator functions to contain yield
-        "rest-spread-spacing": "error",               //  enforce spacing between rest and spread operators and their expressions
-        "sort-imports": "off",                        //  enforce sorted import declarations within modules
-        "symbol-description": "off",                  //  require symbol descriptions
-        "template-curly-spacing": "error",            //  require or disallow spacing around embedded expressions of template strings
-        "yield-star-spacing": "off"                   //  require or disallow spacing around the * in yield* expressions
+        "switch-colon-spacing": "error",                                                          //  enforce spacing around colons of switch statements
+        "template-tag-spacing": "error",                                                          //  require or disallow spacing between template tags and their literals
+        "unicode-bom": "error",                                                                   //  require or disallow the Unicode Byte Order Mark (BOM)
+        "wrap-regex": "off"                                                                       //  require parenthesis around regex literals
     }
 };
