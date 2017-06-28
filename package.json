@@ -1,19 +1,27 @@
 {
   "name": "fs-default-project-config",
   "version": "2.0.0",
-  "description": "Repo containing commons fox sports project configs",
+  "description": "Repo containing commons fox sports project linting configs and editor settings",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/FoxSportsAustralia/fs-default-project-config.git"
+    "url": "FoxSportsAustralia/fs-default-project-config.git"
   },
   "author": "FOXSPORTS Australia",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/FoxSportsAustralia/fs-default-project-config/issues"
   },
-  "homepage": "https://github.com/FoxSportsAustralia/fs-default-project-config#readme"
+  "homepage": "https://github.com/FoxSportsAustralia/fs-default-project-config#readme",
+  "optionalDependencies": {
+    "eslint": "^4.1.1",
+    "eslint-plugin-compat": "^1.0.4",
+    "eslint-plugin-filenames": "^1.1.0",
+    "eslint-plugin-jsx-a11y": "^3.0.2",
+    "eslint-plugin-react": "^6.8.0",
+    "sass-lint": "^1.10.2"
+  }
 }
