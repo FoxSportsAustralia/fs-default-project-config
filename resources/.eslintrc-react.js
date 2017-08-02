@@ -24,7 +24,7 @@ module.exports = {
         "react/no-did-mount-set-state": "error",                     // Prevent usage of setState in componentDidMount
         "react/no-did-update-set-state": "error",                    // Prevent usage of setState in componentDidUpdate
         "react/no-direct-mutation-state": "error",                   // Prevent direct mutation of this.state
-        "react/no-find-dom-node": "off",                             // Prevent usage of findDOMNode
+        "react/no-find-dom-node": "error",                           // Prevent usage of findDOMNode
         "react/no-is-mounted": "off",                                // Prevent usage of isMounted
         "react/no-multi-comp": "off",                                // Prevent multiple component definition per file
         "react/no-render-return-value": "off",                       // Prevent usage of the return value of React.render
@@ -34,7 +34,7 @@ module.exports = {
         "react/no-unknown-property": "error",                        // Prevent usage of unknown DOM property (fixable)
         "react/no-unused-prop-types": "error",                       // Prevent definitions of unused prop types
         "react/prefer-es6-class": "off",                             // Enforce ES5 or ES6 class for React Components
-        "react/prefer-stateless-function": "off",                    // Enforce stateless React Components to be written as a pure function
+        "react/prefer-stateless-function": "error",                  // Enforce stateless React Components to be written as a pure function
         "react/prop-types": "error",                                 // Prevent missing props validation in a React component definition
         "react/react-in-jsx-scope": "error",                         // Prevent missing React when using JSX
         "react/require-optimization": "off",                         // Enforce React components to have a shouldComponentUpdate method
@@ -43,6 +43,7 @@ module.exports = {
         "react/sort-comp": "error",                                  // Enforce component methods order
         "react/sort-prop-types": "off",                              // Enforce propTypes declarations alphabetical sorting
         "react/style-prop-object": "error",                          // Enforce style prop value being an object
+        "react/void-dom-elements-no-children": "error",              // Prevent void DOM elements (e.g. <img />, <br />) from receiving children (react/void-dom-elements-no-children)
 
         /**
          * REACT JSX

@@ -106,7 +106,7 @@ module.exports = {
         "no-useless-escape": "off",                              // disallow unnecessary escape characters
         "no-useless-return": "off",                              // disallow redundant return statements
         "no-void": "off",                                        // disallow void operators
-        "no-warning-comments": "off",                            // disallow specified warning terms in comments
+        "no-warning-comments": "warn",                           // disallow specified warning terms in comments
         "no-with": "error",                                      // disallow with statements
         "prefer-promise-reject-errors": "off",                   // require using Error objects as Promise rejection reasons
         "radix": "off",                                          // enforce the consistent use of the radix argument when using parseInt()
