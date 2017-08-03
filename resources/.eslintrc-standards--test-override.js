@@ -15,11 +15,11 @@ module.exports = {
             "object": "it",
             "property": "only"
         }],
-        "object-curly-spacing": "off",         // ignore object spacing, again typically JSON has spaces. We do not. But it's okay!
-        "quote-props":          "off",         // ignore quotes on props, fairly common for JSON responses in tests ok!
+        "object-curly-spacing": "off",       // ignore object spacing, again typically JSON has spaces. We do not. But it's okay!
+        "quote-props":          "off",       // ignore quotes on props, fairly common for JSON responses in tests ok!
 
-        "import/no-commonjs": "off"          // Dynamic imports valid in tests
-        "import/default": "off",             // Its a test... don't need to export
-        "import/no-namespace": "off",        // We need this for stubbing imports. Yes... that will break when we move off babel. Sorry future dev!
+        "import/default":      "off",        // Its a test... don't need to export
+        "import/no-commonjs":  "off",        // Dynamic imports valid in tests
+        "import/no-namespace": "off"         // We need this for stubbing imports. Yes... that will break when we move off babel. Sorry future dev!
     }
 };
