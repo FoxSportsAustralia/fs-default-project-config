@@ -1,6 +1,6 @@
 {
   "name": "fs-default-project-config",
-  "version": "3.0.0",
+  "version": "3.1.0",
   "description": "Repo containing commons fox sports project linting configs and editor settings",
   "main": "index.js",
   "scripts": {
