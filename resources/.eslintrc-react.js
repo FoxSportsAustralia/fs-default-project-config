@@ -14,8 +14,24 @@ module.exports = {
          *
          * https://github.com/yannickcr/eslint-plugin-react
          */
+        "react/boolean-prop-naming": "off",                          // Unfortunately, turn it off for now, it’s erroring
+        // "react/boolean-prop-naming": [                               // Enforce consistent naming of boolean props with is or has
+        //     "error",
+        //     { "rule": "^(is|has)[A-Z]([A-Za-z0-9]?)+" }
+        // ],
+        /* Created issue: https://github.com/yannickcr/eslint-plugin-react/issues/1452
+           Crashes linter because of:
+
+           OTTCard.propTypes = merge({}, OTTCard.propTypes, {
+               showMatchScore: propTypes.bool
+           });
+
+           in: Hawk Widgets src/js/components/card/ott-card.js */
+        "react/default-props-match-prop-types": "error",             // Enforce all defaultProps have a corresponding non-required PropType
         "react/display-name": "off",                                 // Prevent missing displayName in a React component definition
         "react/forbid-component-props": "off",                       // Forbid certain props on Components
+        "react/forbid-elements": "off",                              // Forbid certain elements
+        "react/forbid-foreign-prop-types": "error",                  // Forbid using another component’s prop types unless specifically imported/exported
         "react/forbid-prop-types": ["error", {"forbid": ["array"]}], // Forbid certain propTypes
         "react/no-children-prop": "off",                             // Prevent passing children as props
         "react/no-danger": "off",                                    // Prevent usage of dangerous JSX properties
@@ -27,12 +43,16 @@ module.exports = {
         "react/no-find-dom-node": "error",                           // Prevent usage of findDOMNode
         "react/no-is-mounted": "off",                                // Prevent usage of isMounted
         "react/no-multi-comp": "off",                                // Prevent multiple component definition per file
+        "react/no-redundant-should-component-update": "error",       // Prevent usage of shouldComponentUpdate when extending React.PureComponent
         "react/no-render-return-value": "off",                       // Prevent usage of the return value of React.render
         "react/no-set-state": "off",                                 // Prevent usage of setState
         "react/no-string-refs": "error",                             // Prevent using string references in ref attribute.
+        "react/no-typos": "error",                                   // Ensure no casing typos were made declaring static class properties and lifecycle methods
         "react/no-unescaped-entities": "off",                        // Prevent invalid characters from appearing in markup
         "react/no-unknown-property": "error",                        // Prevent usage of unknown DOM property (fixable)
         "react/no-unused-prop-types": "error",                       // Prevent definitions of unused prop types
+        "react/no-unused-state": "error",                            // Prevent definitions of unused state
+        "react/no-will-update-set-state": "error",                   // Prevent setState in componentWillUpdate, as it leads to
         "react/prefer-es6-class": "off",                             // Enforce ES5 or ES6 class for React Components
         "react/prefer-stateless-function": "error",                  // Enforce stateless React Components to be written as a pure function
         "react/prop-types": "error",                                 // Prevent missing props validation in a React component definition
@@ -51,7 +71,9 @@ module.exports = {
          * https://github.com/yannickcr/eslint-plugin-react
          */
         "react/jsx-boolean-value": ["error", "always"],                               // Enforce boolean attributes notation in JSX (fixable)
-        "react/jsx-closing-bracket-location": ["error", {"location": "after-props"}], // Validate closing bracket location in JSX (fixable)
+        "react/jsx-closing-bracket-location": "error",                                // Validate closing bracket location in JSX (fixable)
+        "react/jsx-closing-tag-location": "error",                                    // Enforce the closing tag location for multi-line JSX elements
+        "react/jsx-curly-brace-presence": ["error", "never"],                         // Enforce children don’t have unnecessary curly braces eg <Element prop={"value"}>{"Hello world"}</Element>
         "react/jsx-curly-spacing": ["error", "never"],                                // Enforce or disallow spaces inside of curly braces in JSX attributes (fixable)
         "react/jsx-equals-spacing": "error",                                          // Enforce or disallow spaces around equal signs in JSX attributes (fixable)
         "react/jsx-filename-extension": "off",                                        // Restrict file extensions that may contain JSX
@@ -65,16 +87,14 @@ module.exports = {
         "react/jsx-no-comment-textnodes": "error",                                    // Prevent comments from being inserted as text nodes
         "react/jsx-no-duplicate-props": "error",                                      // Prevent duplicate props in JSX
         "react/jsx-no-literals": "off",                                               // Prevent usage of unwrapped JSX strings
-        "react/jsx-no-target-blank": "off",                                           // Prevent usage of unsafe target='_blank'
+        "react/jsx-no-target-blank": "error",                                         // Prevent usage of unsafe target='_blank'
         "react/jsx-no-undef": "error",                                                // Disallow undeclared variables in JSX
         "react/jsx-pascal-case": "error",                                             // Enforce PascalCase for user-defined JSX components
         "react/jsx-sort-props": "off",                                                // Enforce props alphabetical sorting
-        "react/jsx-space-before-closing": "error",                                    // Validate spacing before closing bracket in JSX (fixable)
         "react/jsx-tag-spacing": "error",                                             // Validate whitespace in and around the JSX opening and closing brackets (fixable)
         "react/jsx-uses-react": "error",                                              // Prevent React to be incorrectly marked as unused
         "react/jsx-uses-vars": "error",                                               // Prevent variables used in JSX to be incorrectly marked as unused
         "react/jsx-wrap-multilines": "error",                                         // Prevent missing parentheses around multilines JSX (fixable)
-        "react/jsx-no-target-blank": "error",                                         // Prevent usage of unsafe target='_blank'
 
         /**
          * JSX a11y
