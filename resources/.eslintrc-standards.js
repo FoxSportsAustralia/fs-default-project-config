@@ -6,6 +6,7 @@ module.exports = {
          * These rules relate to possible syntax or logic errors in JavaScript code:
          */
         "for-direction": "off",                                                  // enforce “for” loop update clause moving the counter in the right direction
+        "getter-return": "error",                                                // enforce return statements in getters
         "no-await-in-loop": "off",                                               // disallow await inside of loops
         "no-compare-neg-zero": "error",                                          // disallow comparing against -0
         "no-cond-assign": "error",                                               // disallow assignment operators in conditional expressions
@@ -162,6 +163,7 @@ module.exports = {
         "func-name-matching": "off",                                                              // require function names to match the name of the variable or property to which they are assigned
         "func-names": "off",                                                                      // require or disallow named function expressions
         "func-style": "off",                                                                      // enforce the consistent use of either function declarations or expressions
+        "function-paren-newline": ["error", "consistent"],                                        // enforce consistent line breaks inside function parentheses
         "id-blacklist": "off",                                                                    // disallow specified identifiers
         "id-length": "off",                                                                       // enforce minimum and maximum identifier lengths
         "id-match": "off",                                                                        // require identifiers to match a specified regular expression
@@ -183,6 +185,7 @@ module.exports = {
         "line-comment-position": "off",                                                           //  enforce position of line comments
         "linebreak-style": ["error", "unix"],                                                     //  enforce consistent linebreak style
         "lines-around-comment": ["error", {"beforeBlockComment": true, "allowBlockStart": true}], //  require empty lines around comments
+        "lines-between-class-members": ["error", "always", { exceptAfterSingleLine: true }],      //  require empty lines around comments
         "max-depth": ["error", 3],                                                                //  enforce a maximum depth that blocks can be nested
         "max-len": ["error", {                                                                    //  enforce a maximum line length
             "code": 140,
@@ -195,7 +198,8 @@ module.exports = {
         "max-params": ["error", 5],                                                               //  enforce a maximum number of parameters in function definitions
         "max-statements": "off",                                                                  //  enforce a maximum number of statements allowed in function blocks
         "max-statements-per-line": ["error", {"max": 1}],                                         //  enforce a maximum number of statements allowed per line
-        "multiline-ternary": ["error", "never"],                                                  //  enforce newlines between operands of ternary expressions
+        "multiline-comment-style": "off",                                                         //  enforce a particular style for multiline comments
+        "multiline-ternary": ["error", "off"],                                                    //  enforce newlines between operands of ternary expressions
         "new-cap": "off",                                                                         //  require constructor names to begin with a capital letter
         "new-parens": "error",                                                                    //  require parentheses when invoking a constructor with no arguments
         "newline-per-chained-call": ["error", {"ignoreChainWithDepth": 2}],                       //  require a newline after each call in a method chain
