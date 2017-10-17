@@ -12,11 +12,6 @@ module.exports = {
     },
     "rules": {
         /**
-         * ECMASCRIPT 6
-         *
-         * These rules relate to ES6, also known as ES2015
-         */
-        /**
          * ECMASCRIPT 2015
          *
          * These rules relate to ES2015, also known as ES6
@@ -48,7 +43,7 @@ module.exports = {
           "enforceForRenamedProperties": false
         }],
         "prefer-numeric-literals": "off",             //  disallow parseInt() in favor of binary, octal, and hexadecimal literals
-        "prefer-rest-params": "off",                  //  require rest parameters instead of arguments
+        "prefer-rest-params": "error",                //  require rest parameters instead of arguments
         "prefer-spread": "error",                     //  require spread operators instead of .apply()
         "prefer-template": "off",                     //  require template literals instead of string concatenation
         "require-yield": "off",                       //  require generator functions to contain yield
