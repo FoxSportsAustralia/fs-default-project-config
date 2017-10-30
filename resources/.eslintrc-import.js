@@ -35,16 +35,17 @@ module.exports = {
         "import/unambiguous": "error",                                     // Report potentially ambiguous parse goal (script vs. module)
 
         /* IMPORT: Style guide */
+        "import/exports-last": "off",                                           // Ensure all exports appear after other statements
         "import/extensions": ["error", { "js": "never", "json": "always" }],    // Ensure consistent use of file extension within the import path
         "import/first": "error",                                                // Ensure all imports appear before other statements
         "import/max-dependencies": "off",                                       // Limit the maximum number of dependencies a module can have
         "import/newline-after-import": "error",                                 // Enforce a newline after import statements
+        "import/no-anonymous-default-export": "off",                            // Forbid anonymous values as default exports
         "import/no-duplicates": "error",                                        // Report repeated import of the same module in multiple places
         "import/no-named-default": "error",                                     // Forbid named default exports
         "import/no-namespace": "error",                                         // Report namespace imports
         "import/no-unassigned-import": "error",                                 // Forbid unassigned imports
         "import/order": "error",                                                // Enforce a convention in module import order
-        "import/prefer-default-export": "error",                                // Prefer a default export if module exports a single name
-        "import/no-anonymous-default-export": "off"                             // Forbid anonymous values as default exports
+        "import/prefer-default-export": "error"                                 // Prefer a default export if module exports a single name
     }
 };
