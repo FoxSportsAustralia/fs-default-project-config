@@ -199,7 +199,7 @@ module.exports = {
         "max-statements": "off",                                                                  //  enforce a maximum number of statements allowed in function blocks
         "max-statements-per-line": ["error", {"max": 1}],                                         //  enforce a maximum number of statements allowed per line
         "multiline-comment-style": "off",                                                         //  enforce a particular style for multiline comments
-        "multiline-ternary": ["error", "off"],                                                    //  enforce newlines between operands of ternary expressions
+        "multiline-ternary": "off",                                                               //  enforce newlines between operands of ternary expressions
         "new-cap": "off",                                                                         //  require constructor names to begin with a capital letter
         "new-parens": "error",                                                                    //  require parentheses when invoking a constructor with no arguments
         "newline-per-chained-call": ["error", {"ignoreChainWithDepth": 2}],                       //  require a newline after each call in a method chain
