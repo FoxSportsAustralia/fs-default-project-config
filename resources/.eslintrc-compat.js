@@ -5,6 +5,9 @@ module.exports = {
     "plugins": [
         "compat"
     ],
+    "settings": {
+        "polyfills": ["promises"]
+    },
     "rules": {
         "compat/compat": 2
     }
