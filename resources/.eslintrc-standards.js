@@ -153,7 +153,7 @@ module.exports = {
         "brace-style": ["error", "1tbs", {"allowSingleLine": true}],                              // enforce consistent brace style for blocks
         "camelcase": ["error", {properties: "never"}],                                            // enforce camelcase naming convention
         "capitalized-comments": "off",                                                            // enforce or disallow capitalization of the first letter of a comment
-        "comma-dangle": ["error", "always-multiline"],                                                                  // require or disallow trailing commas
+        "comma-dangle": ["error", "always-multiline"],                                            // require or disallow trailing commas
         "comma-spacing": "error",                                                                 // enforce consistent spacing before and after commas
         "comma-style": "error",                                                                   // enforce consistent comma style
         "computed-property-spacing": "error",                                                     // enforce consistent spacing inside computed property brackets
