@@ -230,7 +230,7 @@ module.exports = {
         "one-var": "off",                                                                         //  enforce variables to be declared either together or separately in functions
         "one-var-declaration-per-line": "off",                                                    //  require or disallow newlines around variable declarations
         "operator-assignment": "off",                                                             //  require or disallow assignment operator shorthand where possible
-        "operator-linebreak": ["error", "after"],                                                 //  enforce consistent linebreak style for operators
+        "operator-linebreak": ["error", "before"],                                                //  enforce consistent linebreak style for operators
         "padded-blocks": ["error", "never"],                                                      //  require or disallow padding within blocks
         "padding-line-between-statements": ["error",                                              //  require or disallow padding lines between statements
             { blankLine: "always", prev: "*", next: "return" },
