@@ -116,7 +116,8 @@ module.exports = {
         "jsx-a11y/iframe-has-title": "error",                                            // Enforce iframe elements have a title attribute.
         "jsx-a11y/img-redundant-alt": "error",                                           // Enforce <img> alt prop does not contain the word "image", "picture", or "photo".
         "jsx-a11y/interactive-supports-focus": "error",                                  // Enforce that elements with interactive handlers like onClick must be focusable.
-        "jsx-a11y/label-has-for": [ 2, { "required": { "some": [ "nesting", "id" ] } }], // Enforce that <label> elements have the htmlFor prop
+        "jsx-a11y/label-has-for": "off", // Enforce that <label> elements have the htmlFor prop, deprecated in favour of label-has-associated-control (doesn’t work with form controls nested inside children of label eg. <label><span><input /></span></label>)
+        "jsx-a11y/label-has-associated-control": "off", // Enforce that <label> elements have the htmlFor prop, or have form control nested within. We have to turn this off because it doesn’t work nicely with styled-components: it doesn’t know what is or isn’t a label/input and having a manually curated list of styled-component names (eg. StyledLabel, StyledInput) is terrible. So, off for now.
         "jsx-a11y/lang": "error",                                                        // Enforce lang attribute has a valid value.
         "jsx-a11y/media-has-caption": "off",                                             // Enforces that <audio> and <video> elements must have a <track> for captions.
         "jsx-a11y/mouse-events-have-key-events": "error",                                // Enforce that onMouseOver/onMouseOut are accompanied by onFocus/onBlur for keyboard-only users.
