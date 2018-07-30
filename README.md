@@ -11,7 +11,7 @@ Repo containing commons fox sports project configs
 
     For all rules (standards & react specific):
 
-    ```
+    ```js
     module.exports = {
         "extends": [
             "./node_modules/fs-default-project-config/resources/.eslintrc.js"
@@ -21,10 +21,10 @@ Repo containing commons fox sports project configs
 
     Excluding react specific rules:
 
-    ```
+    ```js
     module.exports = {
         "extends": [
-            "./node_modules/fs-default-project-config/resources/.eslintrc-files.js"
+            "./node_modules/fs-default-project-config/resources/.eslintrc-files.js",
             "./node_modules/fs-default-project-config/resources/.eslintrc-standards.js"
         ]
     };
@@ -32,7 +32,7 @@ Repo containing commons fox sports project configs
 
 If using eslint/compat, ensure that you copy `.browserslistrc` to your project root, or set up a [browserslist config](https://github.com/ai/browserslist#config-file)
 
-```
+```js
     "browserslist": [
         "last 2 versions",
         "Safari >= 8",
